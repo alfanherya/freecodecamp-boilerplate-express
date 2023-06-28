@@ -28,6 +28,13 @@ app.get('/now', function(req, res, next) {// Hypothetical synchronous operation
   });
 
 
+app.get('/:word/echo', (req, res) => {
+    let word = req.params.word;
+
+    let jsonObj = {echo: word, echo: word};
+    res.send(jsonObj);
+});
+
 module.exports = app;
 
 
