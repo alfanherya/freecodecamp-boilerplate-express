@@ -17,6 +17,15 @@ app.get("/json", (req, res) => {
     res.json(json);
 });
 
+app.get('/now', function(req, res, next) {// Hypothetical synchronous operation
+    next();
+  }, function(req, res) {
+    var time = new Date();
+    console.log('time ' + time);
+    res.json({
+        'time':time
+    });
+  });
 
 
 module.exports = app;
