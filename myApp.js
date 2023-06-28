@@ -35,6 +35,14 @@ app.get('/:word/echo', (req, res) => {
     res.send(jsonObj);
 });
 
+app.get('/name', (req, res) => {
+    let first = req.query.first;
+    let last = req.query.last;
+
+    let jsonObj = { name: `${first} ${last}`};
+    res.send(jsonObj);
+})
+
 module.exports = app;
 
 
